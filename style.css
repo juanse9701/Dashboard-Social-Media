@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    /*------------ General -------------------*/
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-Red: hsl(356, 69%, 56%);
+
+    --facebook: hsl(203, 89%, 53%);
+    --twitter: hsl(195, 100%, 50%);
+    --instagram: hsl(37, 97%, 70%);
+    --instagram-2: hsl(329, 70%, 58%);
+    --youTube: hsl(348, 97%, 39%);
+    /*----------Main color------------------ */
+    --main-bg: hsl(0, 0%, 100%);
+    --main-header: hsl(225, 100%, 98%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    /* card BG */
+    --light-Grayish-Blue: hsl(227, 47%, 96%);
+    /* (Text) */
+    --dark-grayish-blue: hsl(228, 12%, 44%);
+    /* (Text)*/
+    --very-dark-blue: hsl(230, 17%, 14%);
+    --switch: hsl(230, 22%, 74%);
+    /*-----------------Dark color---------------- */
+    --dark-bg: hsl(230, 17%, 14%);
+    --switch-dm1: hsl(210, 78%, 56%);
+    --switch-dm2: hsl(146, 68%, 55%);
+    /* (Top BG Pattern) */
+    --very-dark-blue: hsl(232, 19%, 15%);
+    /* (Card BG) */
+    --dark-desaturated-blue: hsl(228, 28%, 20%);
+    /*  (Text) */
+    --desaturated-blue: hsl(228, 34%, 66%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg);
+}
+/* Header */
+.header {
+    background-color: var(--main-header);
+    padding-bottom: 100px;
+}
+
+.header-text{
+    margin: 0 1rem;
+    padding-bottom: .8rem;
+    border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+.header-text .header-text-followers, .header-dark .header-dark-title {
+    font-size: .7em;
+    color: var(--dark-grayish-blue);
+    font-weight: bold;
+}
+
+.header-dark-title {
+    align-self: center;
+}
+
+.header-dark {
+    margin: 0 1rem;
+    padding: .8rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-dark-mode .switch {
+    width: 55px;
+    height: 25px;
+    background: var(--switch);
+    display: inline-block;
+    border-radius: 24px;
+    padding: 4px;
+}
+
+.switch::before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    display:block;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.header-dark-mode input {
+   display: none;
+}
+
+.header-dark-mode input:checked + .switch {
+    background: linear-gradient(to right, var(--switch-dm1) 0%, var(--switch-dm2) 100%);
+}
+.header-dark-mode input:checked + .switch::before {
+  transform: translateX(30px);
+}
+
+
+/*------------ Layouts ---------*/
+
+.wrap {
+    max-width: 1440px;
+    margin: auto;
+    margin-top: -100px;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+/*------------ Card ------------- */
+.card {
+    padding: 1.3rem;
+    background-color: var(--very-pale-blue);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    height: 3px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.card .card-nickname {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.3rem;
+}
+
+.card .card-nickname .name {
+    align-self: center;
+}
+
+.card .card-nickname img {
+    margin-right: 10px;
+}
+
+.card .card-nickname .name {
+    font-size: .8em;
+    font-weight: bold;
+    color: var(--dark-grayish-blue)
+}
+
+.card .card-number {
+    font-size: 2.7em;
+    font-weight: 700;
+}
+
+.card-follower {
+    color: var(--dark-grayish-blue);
+    font-size: .7em;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    margin-bottom: 1.3rem;
+}
+
+.card .card-today {
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.facebook::before {
+     background: var(--facebook);
+}
+
+.twitter::before {
+    background: var(--twitter);
+}
+
+.instagram::before {
+    background: linear-gradient(to right, var(--instagram) 0%, var(--instagram-2) 100%);
+}
+
+.youtube::before {
+    background: var(--youTube);
+}
+
+/*--------------- Card-small --------------*/
+.card-minimal {
+    background-color: var(--very-pale-blue);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.card-minimal .card-minimal-page {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.card-minimal .card-minimal-page .card-mp-text {
+    font-size: .8em;
+    font-weight: bold;
+    align-self: center;
+    color:  var(--dark-grayish-blue);
+}
+
+.card-minimal .card-minimal-percent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-minimal .card-minimal-percent .cmp-number {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-minimal .card-minimal-percent .cmp-percent {
+    align-self: flex-end;
+}
+
+.cmp-percent .up{
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.cmp-percent .down{
+    font-size: .8em;
+    font-weight: bold;
+}
+
+/*-------- up-down followers -------*/
+
+.up {
+    color: var(--lime-green);
+    position: relative;
+}
+
+.up::before {
+    content: "";
+    background-image: url(images/icon-up.svg);
+    display: block;
+    background-repeat: no-repeat;
+    height: 5px;
+    position: absolute;
+    top: 7px;
+    left: -11px;
+    right: 0;
+}
+
+.overview-title {
+    margin: 2rem 1rem;
+}
+
+.down {
+    color: var(--bright-Red);
+    position: relative;
+}
+
+.down::before {
+    content: "";
+    background-image: url(images/icon-down.svg);
+    display: block;
+    background-repeat: no-repeat;
+    height: 5px;
+    position: absolute;
+    top: 7px;
+    left: -11px;
+    right: 0;
+}
+
+/*------------- Footer --------------------------------*/
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+ }
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* ---------Dark mode----------- */
+.dark {
+    background-color: var(--dark-bg);
+    color: var(--White);
+}
+
+.dark .header {
+   background-color: var(--very-dark-blue);
+}
+.dark .header-text-followers, 
+.dark .card-nickname .name,
+.dark .header-dark-title, 
+.dark .card-follower,
+.dark .card-minimal-page .card-mp-text {
+    color: var(--desaturated-blue);
+}
+
+
+.dark .card, .dark .card-minimal {
+    background-color: var(--dark-desaturated-blue);
+}
+
+.attribution a { color: var(--twitter); }
+
+
+/*--------- Media Query ------------------*/
+
+@media screen and (min-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header .header-text {
+        border-bottom: 0;
+    }
+
+    .header-dark {
+        justify-content: initial;
+    }
+
+    .header-dark-title {
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 1rem 7rem;
+    }
+
+    .header {
+        padding: 2rem 7rem 100px 7rem;
+    }
+
+    .header-text {
+        margin: 0;
+    }
+
+    .overview-title {
+       margin: 2rem 7rem 2rem 7rem;
+    }
+
+}
